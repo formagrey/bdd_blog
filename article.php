@@ -25,18 +25,22 @@
             </div>
 
             <div class="row">
-                <span>
+                <span class="titre">
                     <br>
                     <?php
-                        $id_article = $_GET['id'];
-                        $sql_article="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
-                        INNER JOIN Auteur ON Article.id_auteur = Auteur.id WHERE Article.id=$id_article";
+                        //$id_article = $_GET['id'];
+                        $sql_article="SELECT Auteur.nom as nom, Article.texte as texte FROM `Article`
+                        INNER JOIN Auteur ON Article.id_auteur = Auteur.id
+                        WHERE Article.id=$id_article AND Article.id_auteur=Auteur.id";
+
                         $resultat=mysqli_query($link,$sql_article);
                         $row2=mysqli_fetch_assoc($resultat);
 
 
                     ?>
-                    <span="text">Article : <?php echo $row['texte']; ?>
+                    <span class="article col-12">Article : <?php echo $row2['texte'];?></span>
+
+                    <div class="auteur">Auteur : <?php echo $row2['nom'];?></div>
                 </span>
             </div>
 

@@ -60,7 +60,7 @@
         </div>
         <?php include 'include/formulaire.php' ?>
         <div class="footer">
-          
+
         </div>
     </body>
 </html>

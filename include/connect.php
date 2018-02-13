@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect("localhost","root","admin");
+    $link = mysqli_connect("localhost","root","free");
     if (!$link) { // si link = faux connection doit s'arreter
         die('Not connected: ' .mysqli_error());
     }

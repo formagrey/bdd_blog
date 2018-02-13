@@ -16,7 +16,7 @@
             <label>E-mail</label>
             <input type="email" class="form-control" aria-describedby="emailHelp" name="mail">
         </span>
-        <span class="form-group col-6 text-left">
+        <span class="form-group col-xs-12 col-md-6 ">
             <label>Titre</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="titre">
         </span>
