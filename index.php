@@ -26,15 +26,15 @@
                             <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Nouveau Message</a>
+                            <a class="nav-link" href="#new_post">Nouveau Message</a>
                           </li>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
-                              <a class="dropdown-item" href="#">Média</a>
                               <a class="dropdown-item" href="#">Sport</a>
-                              <a class="dropdown-item" href="#">Technologie</a>
                               <a class="dropdown-item" href="#">Travail</a>
+                              <a class="dropdown-item" href="#">Média</a>
+                              <a class="dropdown-item" href="#">Technologie</a>
                             </div>
                           </li>
                         </ul>
@@ -45,14 +45,14 @@
                     <div class="row text-center col-12">
                             <?php
                                 $sql="SELECT * FROM `Article`
-                                INNER JOIN Auteur ON Article.id_auteur = Auteur.id";
+                                INNER JOIN Auteur ON Article.id_auteur = Auteur.id LIMIT 10";
                                 $resultat=mysqli_query($link,$sql);
                                     if (!$resultat) {
                                         die('Erreur dans la requette: '.mysqli_error($link));
                                     }
                                     while ($row=mysqli_fetch_array($resultat)) {
-                                    echo '<span class="col-xs-12 col-md-6"><a href="contact.php?id='.$row['id'].'">'.$row['titre'].'</a>
-                                    <p>'.$row['texte'].'</p> </span>';}
+                                    echo '<span class="col-xs-12 col-md-6"><a href="article.php?id='.$row['id'].'">'.$row['titre'].'</a>
+                                    <p class="text-truncate">'.$row['texte'].'</p> </span>';}
                             ?>
                     </div>
                 </div>
