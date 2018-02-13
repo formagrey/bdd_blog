@@ -57,6 +57,7 @@
                 </div>
             </div>
         </div>
+        <?php include 'include/formulaire.php' ?>
         <div class="footer">
           
         </div>
