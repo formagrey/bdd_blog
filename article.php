@@ -12,28 +12,28 @@
         <div class="container">
             <div class="row">
                 <?php
-                    $id_auteur = $_GET['id'];
+                    $id_article = $_GET['id'];
 
-                    $sql="SELECT * FROM Auteur WHERE id=$id_auteur";
+                    $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
+                    INNER JOIN Auteur ON Article.id_auteur = Auteur.id WHERE Article.id=$id_article";
 
                     $resultat=mysqli_query($link,$sql);
                     $row=mysqli_fetch_assoc($resultat);
 
                 ?>
-                <span="nom">Auteur : <?php echo $row['nom']; ?>
+                <span="nom">Titre : <?php echo $row['titre']; ?>
             </div>
 
             <div class="row">
                 <span>
                     <br>
                     <?php
+                        $id_article = $_GET['id'];
+                        $sql_article="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
+                        INNER JOIN Auteur ON Article.id_auteur = Auteur.id WHERE Article.id=$id_article";
+                        $resultat=mysqli_query($link,$sql_article);
+                        $row2=mysqli_fetch_assoc($resultat);
 
-                    $sql="SELECT * FROM `Article`
-                    INNER JOIN Auteur ON Article.id_auteur = Auteur.id";
-
-                    $resultat=mysqli_query($link,$sql);
-                    //$id_article = $_GET['texte'];
-                    $row=mysqli_fetch_assoc($resultat);
 
                     ?>
                     <span="text">Article : <?php echo $row['texte']; ?>
