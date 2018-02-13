@@ -1,3 +1,5 @@
+<?php include 'include/connect.php' ?>
+
 <form method="POST" action="requeteContact.php" class="col-6 offset-3">
     <div class="row">
         <span class="form-group col-6 text-left">
