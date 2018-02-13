@@ -23,12 +23,11 @@
         <span class="form-group col-6">
             <label>Catégorie</label>
             <select  name="categorie" class="form-control">
-                <?php
-                    $sql = 'SELECT * FROM Categorie';
-                    $grep = mysqli_query($link,$sql);
-                    while ($gdata = $grep->fetch()){ ?>
-                        <option class="text-center" value="<php echo $gdata['id'] ?>"><?php echo $gdata['nom']?></option>
-                <?php } ?>
+                <option value="0"></option>
+                <option value="1">Sport</option>
+                <option value="2">Travail</option>
+                <option value="3">Media</option>
+                <option value="3">Technologie</option>
             </select>
         </span>
     <div class="">
@@ -44,6 +43,6 @@
         </span>
     </div>
     <div class="row">
-        <button type="submit" class="btn btn-primary col-2 offset-9">Enregistrer</button>
+        <button type="submit" class="btn btn-success col-12">Envoie</button>
     </div>
 </form>
