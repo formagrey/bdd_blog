@@ -7,13 +7,12 @@
         <title>BLOG - PHP/MYSQL</title>
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row col-12">
-                <div class="jumbotron col-12 text-center animated fadeInDown">
+                <div class="col-12 text-center animated fadeInDown">
                     <h1>BLOG en PHP MYSQL</h1>
                 </div>
-                <div class="text-center col-12">
-                    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                    <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
                       <a class="navbar-brand" href="#"></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -25,7 +24,7 @@
                             <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#new_post">Nouveau Message</a>
+                            <a class="nav-link" href="#new_post">Nouvel Article</a>
                           </li>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
@@ -39,7 +38,6 @@
                         </ul>
                       </div>
                     </nav>
-                </div>
                 <div class="container animated fadeInUp">
                     <div class="row text-center col-12">
                             <?php

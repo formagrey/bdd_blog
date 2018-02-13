@@ -32,11 +32,11 @@
                 <option value="3">Technologie</option>
             </select>
         </span>
-    <div class="">
+<!--<div class="">
         <span class="form-group col-6 btn btn-default btn-file">
             <input type="file">
         </span>
-    </div>
+    </div>-->
     </div>
     <div class="row">
         <span class="form-group col-12 text-left">
