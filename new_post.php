@@ -15,20 +15,38 @@ $texte = $_POST["texte"] ;
 //$image = $_POST["image"]
 
 //Variables Catégories
+$cat = $_POST["cat"]
 
 //création de la requête SQL:
 
-$new_post = mysqli_query($link, "INSERT INTO Article (titre, texte )
-         VALUES('$titre', '$texte')";
+//test utilisateur:
+$testUtilisateur = mysqli_query($link,
+	"SELECT mail
+	FROM Auteur
+	WHERE mail = '$mail'
+    ");
+    $res_test_user = mysqli_num_rows($testUtilisateur);
 
-$new_auteur = mysqli_query($link,
-  "INSERT INTO Auteur (nom, prenom, mail)
-  VALUES ('$nom', '$prenom', '$mail')");
+if($res_test_user == 0)
+{
+	$new_auteur = mysqli_query($link,
+	"INSERT INTO Auteur (nom, prenom, mail)
+	VALUES ('$nom', '$prenom', '$mail')");
+
+}
+
+	$res = mysqli_query($link,
+	"SELECT id
+	FROM Auteur
+	WHERE mail = '$mail'
+	");
+    $res_auteur = mysqli_fetch_assoc($res);
+    $id_auteur = $res_auteur['id'];
 
 
-//exécution de la requête SQL:
-$requete = mysqli_query($link, $new_post);
-
+$requete = mysqli_query($link,
+	"INSERT INTO Article (titre, texte, id_auteur)
+	VALUES ('$titre', '$texte', '$id_auteur')");
 
 //affichage des résultats, pour savoir si l'insertion a marchée:
 if($requete)
@@ -38,6 +56,6 @@ if($requete)
     }
 else
     {
-      echo("L'insertion à échouée") ;
+      echo("L'insertion à échouée" . mysqli_error($link)) ;
     }
  ?>

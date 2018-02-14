@@ -1,13 +1,35 @@
+h1
+{
+	font-family: $titleFont;
+}
+
 body
 {
+	padding-left: 0px;
+	padding-right: 0px;
 	background-image: url("../image/fond4.jpg");
 	background-attachment: fixed;
 	background-size: contain;
 	width: 100%;
+	div
+	{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }
 
 form
 {
-	background-color: rgba(196, 196, 196,0.8);
+	background-color: $postArticleColor;
 	border-radius: 15px;
+}
+
+.article
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    background-color: $postArticleColor;
+    border: solid 5px;
+    border-radius: 10px; 
 }

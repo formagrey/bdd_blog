@@ -1,18 +1,26 @@
+h1 {
+  font-family: "Lobster", cursive; }
+
 body {
+  padding-left: 0px;
+  padding-right: 0px;
   background-image: url("../image/fond4.jpg");
   background-attachment: fixed;
   background-size: contain;
   width: 100%; }
+  body div {
+    padding-left: 0px;
+    padding-right: 0px; }
 
 form {
   background-color: rgba(196, 196, 196, 0.8);
   border-radius: 15px; }
 
-  .article{
-    margin-top: 15px;
-    margin-bottom: 15px;
-
-    background-color: rgba(196, 196, 196, 0.8);
-    border-radius: 15px; }
+.article {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(196, 196, 196, 0.8);
+  border: solid 5px;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=main.css.map */
