@@ -24,7 +24,7 @@
     <div class="row">
         <span class="form-group col-xs-12 col-md-6">
             <label>Catégorie</label>
-            <select  name="categorie" class="form-control">
+            <select  name="id_categorie" class="form-control">
                 <option value="0"></option>
                 <option value="1">Sport</option>
                 <option value="2">Travail</option>
