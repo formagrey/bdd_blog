@@ -1,4 +1,5 @@
 <?php
+
 //on se connecte
 include 'include/connect.php';
 
@@ -13,46 +14,55 @@ $texte = $_POST["texte"] ;
 //$lien = $_POST["lien"] ;
 //$date = $_POST["date"]
 //$image = $_POST["image"]
+$id_categorie = $_POST["id_categorie"] ;
 
-//Variables Catégories
-$cat = $_POST["cat"]
+//création de la requête SQL:
 
-//création des requêtes SQL:
-//test utilisateur par son adresse mail:
+//test utilisateur:
 $testUtilisateur = mysqli_query($link,
-	"SELECT mail
-	FROM Auteur
-	WHERE mail = '$mail'");
-    $res_test_user = mysqli_num_rows($testUtilisateur);
+    "SELECT mail
+    FROM Auteur
+    WHERE mail = '$mail' ");
+   $res_test_user = mysqli_num_rows($testUtilisateur);
 
-if($res_test_user == 0) // si test utilisateur est à alors l'utilisateur n'existe pas donc on va le créer
-    {
-    	$new_auteur = mysqli_query($link,
-    	"INSERT INTO Auteur (nom, prenom, mail)
-    	VALUES ('$nom', '$prenom', '$mail')");
-    }
+if($res_test_user == 0)
+{
+    $new_auteur = mysqli_query($link,
+    "INSERT INTO Auteur (nom, prenom, mail)
+    VALUES ('$nom', '$prenom', '$mail')");
+}
 
-    	$res = mysqli_query($link,
-    	"SELECT id
-    	FROM Auteur
-    	WHERE mail = '$mail'
-    	");
-        $res_auteur = mysqli_fetch_assoc($res);
-        $id_auteur = $res_auteur['id'];
+    $res = mysqli_query($link,
+    "SELECT id
+    FROM Auteur
+    WHERE mail = '$mail' ");
+   $res_auteur = mysqli_fetch_assoc($res);
+   $id_auteur = $res_auteur['id'];
 
 
-$requete = mysqli_query($link,
-	"INSERT INTO Article (titre, texte, id_auteur)
-	VALUES ('$titre', '$texte', '$id_auteur')");
 
-//affichage des résultats, pour savoir si l'insertion a marchée:
+if($id_categorie != 0)
+{
+    $requete = mysqli_query($link,
+    "INSERT INTO Article (titre, texte, id_auteur, id_categorie)
+    VALUES ('$titre', '$texte', '$id_auteur', '$id_categorie')");
+
+    //affichage des résultats, pour savoir si l'insertion a marchée:
     if($requete)
         {
-          echo("L'insertion a été correctement effectuée") ;
-          header("Location: index.php");
+            echo("L'insertion a été correctement effectuée") ;
+            header("Location: index.php");
         }
+
     else
         {
-          echo("L'insertion à échouée" . mysqli_error($link)) ;
+            echo("L'insertion à échouée" . mysqli_error($link)) ;
         }
- ?>
+}
+
+else
+{
+    echo("L'insertion à échouée: " . mysqli_error($link)) ;
+}
+
+?>
