@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -11,6 +8,7 @@
     <body>
         <div class="container col-12">
             <div class="row">
+                <?php include 'include/nav.php' ?>
                 <?php
                 include 'include/connect.php';
 

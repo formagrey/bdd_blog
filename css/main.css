@@ -16,11 +16,25 @@ form {
   background-color: rgba(196, 196, 196, 0.8);
   border-radius: 15px; }
 
+.texteheight{
+    height:200px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
 .article {
   margin-top: 15px;
   margin-bottom: 15px;
-  background-color: rgba(196, 196, 196, 0.8);
-  border: solid 5px;
-  border-radius: 10px; }
+  background-color: rgba(195, 255, 255, 0.5);
+  border-radius: 10px;
+  border: 3px ridge #bbbbbb;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+
 
 /*# sourceMappingURL=main.css.map */

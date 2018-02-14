@@ -1,7 +1,7 @@
 <?php include 'include/connect.php' ?>
 
-
 <form method="POST" action="new_post.php" class="col-8 offset-2">
+    <br><h3>Nouveau message</h3><br>
     <div id="new_post" class="row">
         <span class="form-group col-xs-12 col-md-6">
             <label>Nom</label>
@@ -42,7 +42,7 @@
     <div class="row">
         <span class="form-group col-12 text-left">
             <label>Texte </label>
-            <textarea class="form-control" style="min-height: 50px" rows="25" name="texte"></textarea>
+            <textarea class="form-control texteheight" rows="25" name="texte"></textarea>
         </span>
     </div>
     <div class="row">

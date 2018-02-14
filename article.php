@@ -6,11 +6,12 @@
             include 'include/header.php';
             include 'include/connect.php';
         ?>
-        <title>Contact</title>
+        <title>Article</title>
     </head>
     <body>
         <div class="container">
             <div class="row">
+                <?php include 'include/nav.php' ?>
                 <?php
                     $id_article = $_GET['id'];
 

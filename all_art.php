@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <?php include 'include/header.php' ?>
         <?php include 'include/connect.php' ?>
-        <title>BLOG - PHP/MYSQL</title>
+        <title>Tous les articles</title>
     </head>
     <body>
         <div class="container-fluid">
@@ -18,7 +18,7 @@
 
                             <?php
                                 $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
-                                INNER JOIN Auteur ON Article.id_auteur = Auteur.id ORDER BY id DESC LIMIT 10";
+                                INNER JOIN Auteur ON Article.id_auteur = Auteur.id";
                                 $resultat=mysqli_query($link,$sql);
                                     if (!$resultat) {
                                         die('Erreur dans la requette: '.mysqli_error($link));
