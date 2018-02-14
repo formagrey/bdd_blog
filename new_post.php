@@ -14,8 +14,7 @@ $texte = $_POST["texte"] ;
 //$lien = $_POST["lien"] ;
 //$date = $_POST["date"]
 //$image = $_POST["image"]
-$id_categorie = $_POST["id_categorie"] ;
-
+$id_categorie = $_POST["categorie"] ;
 //création de la requête SQL:
 
 //test utilisateur:
