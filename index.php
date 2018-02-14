@@ -11,7 +11,7 @@
             <div class="row col-12">
                 <div class="col-12 text-center animated fadeInDown">
                     <h1>BLOG en PHP MYSQL</h1>
-                </div>
+
                     <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
                       <a class="navbar-brand" href="#"></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,8 @@
                         </ul>
                       </div>
                     </nav>
-                <div class="container animated fadeInUp">
+                    </div>
+                <div class="container animated fadeInDown">
                     <div class="row text-center col-12">
                             <?php
                                 $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
@@ -48,7 +49,7 @@
                                         die('Erreur dans la requette: '.mysqli_error($link));
                                     }
                                     while ($row=mysqli_fetch_array($resultat)) {
-                                        echo '<span class="col-xs-12 col-md-6"><a href="article.php?id='.$row['id'].'">'.$row['titre'].'</a>
+                                        echo '<span class="animated flip article col-xs-12 col-md-6"><a href="article.php?id='.$row['id'].'">'.$row['titre'].'</a>
                                     <p class="text-truncate">'.$row['texte'].'</p> </span>';
                                     }
                             ?>
@@ -56,7 +57,9 @@
                 </div>
             </div>
         </div>
-        <?php include 'include/formulaire.php' ?>
+        <div class="animated fadeInUp">
+            <?php include 'include/formulaire.php' ?>
+        </div>
         <div class="footer">
 
         </div>

@@ -1,18 +1,18 @@
 <?php include 'include/connect.php' ?>
 
-<form method="POST" action="requeteContact.php" class="col-6 offset-3">
+<form method="POST" action="new_post.php" class="align-items-center col-8 offset-2">
     <div class="row">
-        <span class="form-group col-6 text-left">
+        <span class="form-group col-xs-12 col-md-6">
             <label>Nom</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="nom">
         </span>
-        <span class="form-group col-6 text-left">
+        <span class="form-group col-xs-12 col-md-6">
             <label>Prénom</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" name="telephone">
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="prenom">
         </span>
     </div>
     <div class="row">
-        <span class="form-group col-6 text-left">
+        <span class="form-group col-xs-12 col-md-6 ">
             <label>E-mail</label>
             <input type="email" class="form-control" aria-describedby="emailHelp" name="mail">
         </span>
@@ -22,7 +22,7 @@
         </span>
     </div>
     <div class="row">
-        <span class="form-group col-6">
+        <span class="form-group col-xs-12 col-md-6">
             <label>Catégorie</label>
             <select  name="categorie" class="form-control">
                 <option value="0"></option>
@@ -41,7 +41,7 @@
     <div class="row">
         <span class="form-group col-12 text-left">
             <label>Texte </label>
-            <textarea class="form-control" rows="25" name="texte"></textarea>
+            <textarea class="form-control" style="min-height: 50px" rows="25" name="texte"></textarea>
         </span>
     </div>
     <div class="row">

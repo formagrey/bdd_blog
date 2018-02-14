@@ -8,4 +8,11 @@ form {
   background-color: rgba(196, 196, 196, 0.8);
   border-radius: 15px; }
 
+  .article{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    background-color: rgba(196, 196, 196, 0.8);
+    border-radius: 15px; }
+
 /*# sourceMappingURL=main.css.map */
