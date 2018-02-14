@@ -4,7 +4,7 @@ include 'include/connect.php';
 
 // variables auteur
 $nom = $_POST["nom"] ;
-$nom = $_POST["prenom"] ;
+$prenom = $_POST["prenom"] ;
 $mail = $_POST["mail"] ;
 
 // variables Article
@@ -18,8 +18,37 @@ $texte = $_POST["texte"] ;
 
 //création de la requête SQL:
 
-$new_post = "INSERT INTO Article(titre, texte, nom, prenom, mail)
-         VALUES('$titre', '$texte', '$nom', '$prenom', '$mail')";
+//test utilisateur:
+$testUtilisateur = mysqli_query($link, 
+	"SELECT mail
+	FROM Auteur
+	WHERE mail = $mail");
+
+if($testUtilisateur == null || $testUtilisateur == "")
+{
+	$new_auteur = mysqli_query($link,
+	"INSERT INTO Auteur (nom, prenom, mail)
+	VALUES ('$nom', '$prenom', '$mail')");
+}
+
+else
+{
+	$id_auteur = mysqli_query($link,
+	"SELECT id
+	FROM Auteur
+	WHERE mail = $testUtilisateur
+	");
+	return($id_auteur);
+}
+
+
+
+
+
+$new_post = mysqli_query($link, 
+	"INSERT INTO Article (titre, texte, id_auteur)
+	VALUES('$titre', '$texte', '$id_auteur')";
+
 
 
 //exécution de la requête SQL:
