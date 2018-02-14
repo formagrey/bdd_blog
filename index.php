@@ -15,30 +15,30 @@
                     <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
                       <a class="navbar-brand" href="#"></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                          <span class="navbar-toggler-icon"></span>
                       </button>
 
                       <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav mr-auto">
                           <li class="nav-item active">
-                            <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                              <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#new_post">Nouvel Article</a>
+                              <a class="nav-link" href="#new_post">Nouvel Article</a>
                           </li>
                           <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown04">
-                              <a class="dropdown-item" href="#">Sport</a>
-                              <a class="dropdown-item" href="#">Travail</a>
-                              <a class="dropdown-item" href="#">Média</a>
-                              <a class="dropdown-item" href="#">Technologie</a>
-                            </div>
+                              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                  <a class="dropdown-item" href="#">Sport</a>
+                                  <a class="dropdown-item" href="#">Travail</a>
+                                  <a class="dropdown-item" href="#">Média</a>
+                                  <a class="dropdown-item" href="#">Technologie</a>
+                              </div>
                           </li>
                         </ul>
                       </div>
                     </nav>
-                    </div>
+                </div>
                 <div class="container animated fadeInDown">
                     <div class="row text-center col-12">
                             <?php
