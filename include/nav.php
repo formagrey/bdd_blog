@@ -29,7 +29,7 @@
                   die('Erreur dans la requette: '.mysqli_error($link));
               }
               while ($row=mysqli_fetch_array($resultat)) {
-                  echo '<a href="cat_page.php?id='.$row['id'].'">'.$row['nom'].'</a></br>';
+                  echo '<a href="cat_page.php?id='.$row['id'].'">'. mb_strtoupper($row['nom']).'</a></br>';
               }
           ?>
 

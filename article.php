@@ -9,7 +9,7 @@
         <title>Article</title>
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid col-12">
             <div class="row">
                 <?php include 'include/nav.php' ?>
                 <?php
