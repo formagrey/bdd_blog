@@ -11,9 +11,7 @@ $mail = $_POST["mail"] ;
 // variables Article
 $titre = $_POST["titre"] ;
 $texte = $_POST["texte"] ;
-//$lien = $_POST["lien"] ;
-//$date = $_POST["date"]
-//$image = $_POST["image"]
+
 $id_categorie = $_POST["categorie"] ;
 //création de la requête SQL:
 
