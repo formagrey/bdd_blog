@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <?php include 'include/header.php' ?>
         <?php include 'include/connect.php' ?>
-        <title>BLOG - PHP/MYSQL</title>
+        <title>Blog Chatastrophique</title>
     </head>
     <body>
         <div class="container-fluid">
             <div class="row col-12">
-                <div class="col-12 text-center animated fadeInDown">
-                    <h1>BLOG en PHP MYSQL</h1>
+                <div class="col-12 text-center">
+                    <h1>Blog Chatastrophique</h1>
 
                     <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
                       <a class="navbar-brand" href="#"></a>
