@@ -12,43 +12,30 @@
     </div>
     <?php include 'include/nav.php' ?>
 
-        <div class="container col-12">
-            <div class="row col-12">
+        <div class="container">
+            <div class="row ">
                 <div class="container">
-            <div class="article ">
+                    <div class="article row">
 
                 <?php
                     $id_article = $_GET['id'];
-                    id_article($link);
+                    $infos_article = article_page($link,$id_article);
+                    echo '<h4 class="text-danger">'.$infos_article['titre'].'</h4><br>';
+                    echo '<br><br><p>'.$infos_article['texte'].'</p>';
+                    echo '<br><br><span class="col-12 text-right text-success">'.$infos_article['nom'].'</span>';
+                    //id_article($link);
                 ?>
 
-
-            <div class="row col-12">
-                <span class="titre col-12">
-                    <br>
-                    <?php
-                        $sql_article="SELECT Auteur.nom as nom, Article.texte as texte FROM `Article`
-                        INNER JOIN Auteur ON Article.id_auteur = Auteur.id
-                        WHERE Article.id=$id_article AND Article.id_auteur=Auteur.id";
-
-                        $resultat=mysqli_query($link,$sql_article);
-                        $row2=mysqli_fetch_assoc($resultat);
-                    ?>
-                    <span class="col-12">Article : <?php echo $row2['texte'];?></span>
-
-                    <div class="auteur text-right"></br>Auteur : <?php echo $row2['nom'];?></div>
-                </span>
-            </div>
-        </div>
+                    </div>
                     <div class="col-12">
                         <form method='post' action='index.php'>
-                            <button type="submit" Value="Submit">Retour</button>
+                            <button class='btn btn-default' type="submit" Value="Submit">Retour</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
 
     </body>
 </html>
