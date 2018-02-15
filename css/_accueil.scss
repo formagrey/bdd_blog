@@ -3,22 +3,22 @@ h1
 	font-family: $titleFont;
 }
 
-body
-{
-	padding-left: 0px;
-	padding-right: 0px;
-	background-image: url("../image/fond4.jpg");
-	background-attachment: fixed;
-	background-size: contain;
-	width: 100%;
-	div
-	{
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-}
-
-form
+body 
+  {
+  padding-left: 0px;
+  padding-right: 0px;
+  background-image: url("../image/fond4.jpg");
+  background-attachment: fixed;
+  background-size: contain;
+  width: 100%; 
+  }
+  body div 
+  {
+    padding-left: 0px;
+    padding-right: 0px; 
+  }
+  
+.formNewArticle
 {
 	background-color: $postArticleColor;
 	border-radius: 15px;
@@ -26,10 +26,11 @@ form
 
 .article
 {
-    margin-top: 15px;
-    margin-bottom: 15px;
-
-    background-color: $postArticleColor;
-    border: solid 5px;
-    border-radius: 10px; 
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: rgba(195, 255, 255, 0.5);
+	border-radius: 10px;
+	border: 3px ridge #bbbbbb;
+	font-weight: bold;
+	font-size: 1.3em;
 }
