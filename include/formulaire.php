@@ -1,6 +1,6 @@
 <?php include 'include/connect.php' ?>
 
-<form method="POST" action="new_post.php" class="col-8 offset-2">
+<form method="POST" action="new_post.php" class="col-8 offset-2 formNewArticle">
     <br><h3>Nouveau message</h3><br>
     <div id="new_post" class="row">
         <span class="form-group col-xs-12 col-md-6">

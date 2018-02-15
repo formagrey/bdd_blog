@@ -6,9 +6,12 @@
             include 'include/header.php';
             include 'include/connect.php';
         ?>
-        <title>Article</title>
+        <title>Niarticle</title>
     </head>
     <body>
+        <div class="col-12 text-center">
+            <h1>Blog Chatastrophique</h1>
+        </div>
         <div class="container-fluid col-12">
             <div class="row">
                 <?php include 'include/nav.php' ?>
