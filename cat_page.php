@@ -31,7 +31,7 @@
                         while ($row=mysqli_fetch_array($resultat)) {
 
 
-                         echo '<span class="animated flip article col-xs-12 col-md-6" style="overflow: auto"><a href="article.php?id='.$row['id'].'"><h4 class="text-center">'.$row['titre'].'</h4></a>
+                        echo '<span class="animated flip article col-xs-12 col-md-6" style="overflow: auto"><a href="article.php?id='.$row['id'].'"><h4 class="text-center">'.$row['titre'].'</h4></a>
                         <p class="text-truncate">'.$row['texte'].'</p>
                         <p>'.$row['date'].'</p></span>';
                     }

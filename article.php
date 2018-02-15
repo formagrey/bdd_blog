@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <?php include 'include/header.php' ?>
+        <?php include 'include/fonction.php' ?>
         <title>Niarticles par chategorie</title>
     </head>
     <body>
@@ -18,15 +19,8 @@
 
                 <?php
                     $id_article = $_GET['id'];
-
-                    $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
-                    INNER JOIN Auteur ON Article.id_auteur = Auteur.id WHERE Article.id=$id_article";
-
-                    $resultat=mysqli_query($link,$sql);
-                    $row=mysqli_fetch_assoc($resultat);
-
+                    id_article($link);
                 ?>
-                <span="nom">Titre : <?php echo $row['titre']; ?>
 
 
             <div class="row col-12">
@@ -39,8 +33,6 @@
 
                         $resultat=mysqli_query($link,$sql_article);
                         $row2=mysqli_fetch_assoc($resultat);
-
-
                     ?>
                     <span class="col-12">Article : <?php echo $row2['texte'];?></span>
 
