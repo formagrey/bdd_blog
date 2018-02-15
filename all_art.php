@@ -35,6 +35,7 @@
                 </div>
             </div>
         </div>
+<!--On inclue notre formulaire de nouvel article-->
         <div class="animated fadeInUp">
             <?php include 'include/formulaire.php' ?>
         </div>
