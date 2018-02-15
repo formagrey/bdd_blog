@@ -7,11 +7,11 @@
         <title>Niaccueil</title>
     </head>
     <body>
-    <div class="col-12 text-center">
-        <h1>Blog Chatastrophique</h1>
-    </div>
+        <div class="col-12 text-center">
+            <h1>Blog Chatastrophique</h1>
+        </div>
 <!--Inclusion de la navbar-->
-    <?php include 'include/nav.php' ?>
+        <?php include 'include/nav.php' ?>
             <div class="row col-12">
                 <div class="container animated fadeInDown">
                     <div class="row text-center">
