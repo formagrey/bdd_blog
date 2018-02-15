@@ -6,22 +6,23 @@
         <title>Niarticles par chategorie</title>
     </head>
     <body>
-    <div class="col-12 text-center">
-        <h1>Blog Chatastrophique</h1>
-    </div>
-    <?php include 'include/nav.php' ?>
-
+        <div class="col-12 text-center">
+            <h1>Blog Chatastrophique</h1>
+        </div>
+<!--Inclusion de la navbar-->
+            <?php include 'include/nav.php' ?>
         <div class="container col-12">
             <div class="row">
                 <div class="container">
                     <div class="row">
+<!--connection à la base de donnée-->
                 <?php include 'include/connect.php';
-
+//Requete SQL de récurération des ID et trie par catégorie
                     $categorie = $_GET["id"];
 
                     $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre, Article.id_categorie as cat, date FROM `Article`
-                    INNER JOIN Categorie ON Article.id_categorie = Categorie.id
-                    WHERE Categorie.id = '$categorie' ";
+                        INNER JOIN Categorie ON Article.id_categorie = Categorie.id
+                        WHERE Categorie.id = '$categorie' ";
                     $resultat=mysqli_query($link,$sql);
 
                         if (!$resultat) {
@@ -35,7 +36,7 @@
                         <p>'.$row['date'].'</p></span>';
                     }
                 ?>
-                
+<!--Bouton retour page d'accueil-->
                     <div class="col-12">
                         <form method='post' action='index.php'>
                             <button type="submit" Value="Submit">Retour</button>
@@ -45,6 +46,5 @@
             </div>
         </div>
     </div>
-
     </body>
 </html>

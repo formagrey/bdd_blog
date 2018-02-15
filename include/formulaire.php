@@ -1,3 +1,4 @@
+<!--connection à la base de donnée-->
 <?php include 'include/connect.php' ?>
 
 <form method="POST" action="new_post.php" class="col-8 offset-2 formNewArticle">
@@ -33,11 +34,6 @@
                 <option value="3">Technologie</option>
             </select>
         </span>
-<!--<div class="">
-        <span class="form-group col-6 btn btn-default btn-file">
-            <input type="file">
-        </span>
-    </div>-->
     </div>
     <div class="row">
         <span class="form-group col-12 text-left">
