@@ -19,9 +19,9 @@
     pour l'article sur lequel on clique-->
                         <?php
                             $id_article = $_GET['id'];
-                            $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre 
+                            $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre
                                 FROM `Article`
-                                INNER JOIN Auteur ON Article.id_auteur = Auteur.id 
+                                INNER JOIN Auteur ON Article.id_auteur = Auteur.id
                                 WHERE Article.id=$id_article";
                             $resultat=mysqli_query($link,$sql);
                             $row=mysqli_fetch_assoc($resultat);
@@ -32,7 +32,7 @@
                                 <span class="titre col-12">
                                     <br>
                                     <?php
-                                        $sql_article="SELECT Auteur.nom as nom, Article.texte as texte 
+                                        $sql_article="SELECT Auteur.nom as nom, Article.texte as texte
                                             FROM `Article`
                                             INNER JOIN Auteur ON Article.id_auteur = Auteur.id
                                             WHERE Article.id=$id_article AND Article.id_auteur=Auteur.id";
