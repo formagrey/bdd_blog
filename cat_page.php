@@ -6,8 +6,7 @@
         <title>Niarticles par chategorie</title>
     </head>
     <body>
-    <div class="col-12 text-center">
-        <h1>Blog Chatastrophique</h1>
+           <h1>Blog Chatastrophique</h1>
     </div>
     <?php include 'include/nav.php' ?>
 

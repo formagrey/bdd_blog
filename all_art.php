@@ -28,7 +28,7 @@
                                    <p class="text-truncate">'.$row['texte'].'</p>
                                    <p>'.$row['date'].'</p> </span>';
                                    }
-                           ?>
+                            ?>
 
                     </div>
                 </div>
