@@ -41,13 +41,15 @@ function id_article($link){
     echo $row['titre'];
 }
 
-function article_page($link){
-    $sql_article="SELECT Auteur.nom as nom, Article.texte as texte FROM `Article`
+function article_page($link, $id_article){
+
+    $sql_article="SELECT Auteur.nom as nom, Article.texte as texte, Article.titre as titre FROM `Article`
     INNER JOIN Auteur ON Article.id_auteur = Auteur.id
     WHERE Article.id=$id_article AND Article.id_auteur=Auteur.id";
 
     $resultat=mysqli_query($link,$sql_article);
     $row2=mysqli_fetch_assoc($resultat);
-    echo $row2['texte'];
+
+    return $row2;
 }
 ?>
