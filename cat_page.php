@@ -39,7 +39,7 @@
 <!--Bouton retour page d'accueil-->
                     <div class="col-12">
                         <form method='post' action='index.php'>
-                            <button type="submit" Value="Submit">Retour</button>
+                            <button class='btn btn-dark' type="submit" Value="Submit">Retour</button>
                         </form>
                     </div>
                 </div>
