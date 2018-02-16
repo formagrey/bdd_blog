@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <?php include 'include/header.php' ?>
+        <?php include 'include/fonction.php';?>
         <title>Niarticles par chategorie</title>
     </head>
     <body>
@@ -19,22 +20,7 @@
                 <?php include 'include/connect.php';
 //Requete SQL de récurération des ID et trie par catégorie
                     $categorie = $_GET["id"];
-
-                    $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre, Article.id_categorie as cat, date FROM `Article`
-                        INNER JOIN Categorie ON Article.id_categorie = Categorie.id
-                        WHERE Categorie.id = '$categorie' ";
-                    $resultat=mysqli_query($link,$sql);
-
-                        if (!$resultat) {
-                            die('Erreur dans la requette: '.mysqli_error($link));
-                        }
-                        while ($row=mysqli_fetch_array($resultat)) {
-
-
-                        echo '<span class="animated flip article col-xs-12 col-md-6" style="overflow: auto"><a href="article.php?id='.$row['id'].'"><h4 class="text-center">'.$row['titre'].'</h4></a>
-                        <p class="text-truncate">'.$row['texte'].'</p>
-                        <p>'.$row['date'].'</p></span>';
-                    }
+                    cat_page($link);
                 ?>
 <!--Bouton retour page d'accueil-->
                     <div class="col-12">

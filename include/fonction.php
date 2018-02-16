@@ -3,7 +3,8 @@ include 'include/connect.php';
 
 /*Requete SQL de récurération des 10 derniers articles tronqués*/
 function article_Accueil($link) {
-    $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre, date FROM `Article`
+    $sql=
+        "SELECT Article.id as id, Article.texte as texte, Article.titre as titre, date FROM `Article`
         INNER JOIN Auteur ON Article.id_auteur = Auteur.id ORDER BY id DESC LIMIT 10";
     $resultat=mysqli_query($link,$sql);
         if (!$resultat) {
@@ -18,8 +19,9 @@ function article_Accueil($link) {
 
 
 function all_art($link) {
-    $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre, date FROM `Article`
-    INNER JOIN Auteur ON Article.id_auteur = Auteur.id";
+    $sql=
+        "SELECT Article.id as id, Article.texte as texte, Article.titre as titre, date FROM `Article`
+        INNER JOIN Auteur ON Article.id_auteur = Auteur.id";
     $resultat=mysqli_query($link,$sql);
         if (!$resultat) {
             die('Erreur dans la requette: '.mysqli_error($link));
@@ -33,7 +35,9 @@ function all_art($link) {
 
 function id_article($link){
     $id_article = $_GET['id'];
-    $sql="SELECT Article.id as id, Article.texte as texte, Article.titre as titre FROM `Article`
+    $sql=
+        "SELECT Article.id as id, Article.texte as texte, Article.titre as titre
+        FROM `Article`
         INNER JOIN Auteur ON Article.id_auteur = Auteur.id WHERE Article.id=$id_article";
 
     $resultat=mysqli_query($link,$sql);
@@ -43,13 +47,33 @@ function id_article($link){
 
 function article_page($link, $id_article){
 
-    $sql_article="SELECT Auteur.nom as nom, Article.texte as texte, Article.titre as titre FROM `Article`
-    INNER JOIN Auteur ON Article.id_auteur = Auteur.id
-    WHERE Article.id=$id_article AND Article.id_auteur=Auteur.id";
+    $sql_article=
+        "SELECT Auteur.nom as nom, Article.texte as texte, Article.titre as titre FROM `Article`
+        INNER JOIN Auteur ON Article.id_auteur = Auteur.id
+        WHERE Article.id=$id_article AND Article.id_auteur=Auteur.id";
 
     $resultat=mysqli_query($link,$sql_article);
     $row2=mysqli_fetch_assoc($resultat);
 
     return $row2;
+}
+
+function cat_page($link){
+    $categorie = $_GET["id"];
+
+    $sql=
+        "SELECT Article.id as id, Article.texte as texte, Article.titre as titre, Article.id_categorie as cat, date FROM `Article`
+        INNER JOIN Categorie ON Article.id_categorie = Categorie.id
+        WHERE Categorie.id = '$categorie' ";
+    $resultat=mysqli_query($link,$sql);
+
+        if (!$resultat) {
+            die('Erreur dans la requette: '.mysqli_error($link));
+        }
+        while ($row=mysqli_fetch_array($resultat)) {
+            echo '<span class="animated flip article col-xs-12 col-md-6" style="overflow: auto"><a href="article.php?id='.$row['id'].'"><h4 class="text-center">'.$row['titre'].'</h4></a>
+            <p class="text-truncate">'.$row['texte'].'</p>
+            <p>'.$row['date'].'</p></span>';
+        }
 }
 ?>

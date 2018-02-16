@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect("localhost","root","admin"); // connection à la base de donnée (ip serveur, nom d'utilisateur, mot de passe)
+    $link = mysqli_connect("localhost","root","free"); // connection à la base de donnée (ip serveur, nom d'utilisateur, mot de passe)
     if (!$link) { // si link = faux connection doit s'arreter
         die('Not connected: ' .mysqli_error());
     }
