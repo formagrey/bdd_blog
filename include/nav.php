@@ -22,15 +22,7 @@
 <!--récupération des id + nom de la table catégorie et pour remplir le menu déroulant (maintenance simplifié en cas de rajout de nouvelles catégorie seul le formulaire est à modifier)-->
                   <?php
                   $link = connect();
-                  $sql = "SELECT id, nom
-                          FROM Categorie";
-                  $resultat=mysqli_query($link,$sql);
-                      if (!$resultat) {
-                          die('Erreur dans la requette: '.mysqli_error($link));
-                      }
-                      while ($row=mysqli_fetch_array($resultat)) {
-                          echo '<a href="cat_page.php?id='.$row['id'].'">'. mb_strtoupper($row['nom']).'</a></br>';
-                      }
+                  cat_nav_bar($link);
                   ?>
 
             </div>
@@ -38,4 +30,3 @@
       </ul>
     </div>
 </nav>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>

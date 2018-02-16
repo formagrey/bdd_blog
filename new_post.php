@@ -1,7 +1,8 @@
 <?php
 
 //on se connecte
-include 'include/connect.php';
+include 'include/fonction.php';
+$link = connect();
 
 // variables auteur
 $nom = $_POST["nom"] ;
@@ -13,53 +14,6 @@ $titre = $_POST["titre"] ;
 $texte = $_POST["texte"] ;
 
 $id_categorie = $_POST["categorie"] ;
-//création de la requête SQL:
 
-//test utilisateur:
-$testUtilisateur = mysqli_query($link,
-    "SELECT mail
-    FROM Auteur
-    WHERE mail = '$mail' ");
-   $res_test_user = mysqli_num_rows($testUtilisateur);
-
-if($res_test_user == 0)
-{
-    $new_auteur = mysqli_query($link,
-    "INSERT INTO Auteur (nom, prenom, mail)
-    VALUES ('$nom', '$prenom', '$mail')");
-}
-
-    $res = mysqli_query($link,
-    "SELECT id
-    FROM Auteur
-    WHERE mail = '$mail' ");
-   $res_auteur = mysqli_fetch_assoc($res);
-   $id_auteur = $res_auteur['id'];
-
-
-
-if($id_categorie != 0)
-{
-    $requete = mysqli_query($link,
-    "INSERT INTO Article (titre, texte, id_auteur, id_categorie)
-    VALUES ('$titre', '$texte', '$id_auteur', '$id_categorie')");
-
-    //affichage des résultats, pour savoir si l'insertion a marchée:
-    if($requete)
-        {
-            echo("L'insertion a été correctement effectuée") ;
-            header("Location: index.php");
-        }
-
-    else
-        {
-            echo("L'insertion à échouée" . mysqli_error($link)) ;
-        }
-}
-
-else
-{
-    echo("L'insertion à échouée: " . mysqli_error($link)) ;
-}
-
+new_article($link,$nom,$prenom,$mail,$titre,$texte,$id_categorie);
 ?>

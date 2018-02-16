@@ -5,7 +5,6 @@ function connect(){
         die('Not connected: ' .mysqli_error());
     }
 
-
     $db_selected = mysqli_select_db($link,"BDD_BLOG");
     if(!$db_selected) { // si $db_selected faux base de donnée inacessible stopper la connexion
         die('bdd innaccessible :' .mysqli_error($link));
@@ -89,6 +88,78 @@ function cat_page($link){
         }
 }
 
+function cat_nav_bar($link){
+    $sql = "SELECT id, nom
+            FROM Categorie";
+    $resultat=mysqli_query($link,$sql);
+        if (!$resultat) {
+            die('Erreur dans la requette: '.mysqli_error($link));
+        }
+        while ($row=mysqli_fetch_array($resultat)) {
+            echo '<a href="cat_page.php?id='.$row['id'].'">'. mb_strtoupper($row['nom']).'</a></br>';
+        }
+}
 
+function new_article($link){
+    // variables auteur
+    $nom = $_POST["nom"] ;
+    $prenom = $_POST["prenom"] ;
+    $mail = $_POST["mail"] ;
+
+    // variables Article
+    $titre = $_POST["titre"] ;
+    $texte = $_POST["texte"] ;
+
+    $id_categorie = $_POST["categorie"] ;
+
+    //création de la requête SQL:
+    //test utilisateur:
+    $testUtilisateur = mysqli_query($link,
+        "SELECT mail
+        FROM Auteur
+        WHERE mail = '$mail' ");
+       $res_test_user = mysqli_num_rows($testUtilisateur);
+
+            if($res_test_user == 0)
+            {
+                $new_auteur = mysqli_query($link,
+                "INSERT INTO Auteur (nom, prenom, mail)
+                VALUES ('$nom', '$prenom', '$mail')");
+            }
+
+                $res = mysqli_query($link,
+                "SELECT id
+                FROM Auteur
+                WHERE mail = '$mail' ");
+               $res_auteur = mysqli_fetch_assoc($res);
+               $id_auteur = $res_auteur['id'];
+
+
+
+    if($id_categorie != 0)
+    {
+        $requete = mysqli_query($link,
+        "INSERT INTO Article (titre, texte, id_auteur, id_categorie)
+        VALUES ('$titre', '$texte', '$id_auteur', '$id_categorie')");
+
+        //affichage des résultats, pour savoir si l'insertion a marchée:
+        if($requete)
+            {
+                echo("L'insertion a été correctement effectuée") ;
+                header("Location: index.php");
+            }
+
+        else
+            {
+                echo("L'insertion à échouée" . mysqli_error($link)) ;
+            }
+    }
+
+    else
+    {
+        echo("L'insertion à échouée: " . mysqli_error($link)) ;
+    }
+
+}
 
 ?>
