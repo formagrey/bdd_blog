@@ -21,7 +21,7 @@
                     $id_article = $_GET['id'];
                     $infos_article = article_page($link,$id_article);
                     echo '<h4 class="text-danger">'.$infos_article['titre'].'</h4><br>';
-                    echo '<br><br><p>'.$infos_article['texte'].'</p>';
+                    echo '<div class="col-12"><p>'.$infos_article['texte'].'</p></div>';
                     echo '<br><br><span class="col-12 text-right text-success">'.$infos_article['nom'].'</span>';
                     //id_article($link);
                 ?>

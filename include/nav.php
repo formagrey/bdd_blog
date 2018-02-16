@@ -1,5 +1,4 @@
-<?php include 'include/header.php' ?>
-<?php include 'include/connect.php' ?>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
     <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +21,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
 <!--récupération des id + nom de la table catégorie et pour remplir le menu déroulant (maintenance simplifié en cas de rajout de nouvelles catégorie seul le formulaire est à modifier)-->
                   <?php
+                  $link = connect();
                   $sql = "SELECT id, nom
                           FROM Categorie";
                   $resultat=mysqli_query($link,$sql);

@@ -17,9 +17,10 @@
                 <div class="container">
                     <div class="row">
 <!--connection à la base de donnée-->
-                <?php include 'include/connect.php';
+                <?php
 //Requete SQL de récurération des ID et trie par catégorie
                     $categorie = $_GET["id"];
+                    connect();
                     cat_page($link);
                 ?>
 <!--Bouton retour page d'accueil-->

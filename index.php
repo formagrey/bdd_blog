@@ -17,6 +17,7 @@
                     <div class="row text-center">
 <!--Requete SQL de récurération des 10 derniers articles tronqués -->
                             <?php
+                                $link = connect();
                                 article_Accueil($link);
                             ?>
                     </div>
